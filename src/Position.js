@@ -1,21 +1,21 @@
-var Directions = {
+var Cardinals = {
 	N:"North", S:"South", E:"East", W:"West",
-	isValid: function(direction){
-		return 	direction === "North" || direction === "South" || direction === "East" || direction === "West"
+	isValid: function(cardinal){
+		return 	cardinal === "North" || cardinal === "South" || cardinal === "East" || cardinal === "West"
 	}
 }
-Object.freeze(Directions)
+Object.freeze(Cardinals)
 
-function Position(xCoordinate, yCoordinate, direction){
+function Position(xCoordinate, yCoordinate, cardinal){
 	var myXCoordinate = xCoordinate
 	var myYCoordinate = yCoordinate
-	if(!Directions.isValid(direction)){
+	if(!Cardinals.isValid(cardinal)){
 		throw{
-			name: "Incorrect Direction",
-			message: "An incorrect direction was provided"
+			name: "Incorrect Cardinal",
+			message: "An incorrect cardinal direction was provided"
 		}
 	}
-	var myDirection = direction
+	var myCardinal = cardinal
 
 	this.getXCoordinate = function(){
 		return myXCoordinate
@@ -23,7 +23,7 @@ function Position(xCoordinate, yCoordinate, direction){
 	this.getYCoordinate = function(){
 		return myYCoordinate
 	}
-	this.getDirection = function(){
-		return myDirection
+	this.getCardinal = function(){
+		return myCardinal
 	}
 }

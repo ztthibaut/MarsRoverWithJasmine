@@ -1,14 +1,14 @@
 describe("Position", function(){
-	it("has x,y coordinates & a direction", function(){
-		var position = new Position(0, 1, Directions.N)
+	it("has x,y coordinates & a cardinal", function(){
+		var position = new Position(0, 1, Cardinals.N)
 		expect(position.getXCoordinate()).toEqual(0)
 		expect(position.getYCoordinate()).toEqual(1)
-		expect(position.getDirection()).toEqual(Directions.N)
+		expect(position.getCardinal()).toEqual(Cardinals.N)
 	})
-	it("accepts only valid directions", function(){
-		var incorrectDirection = function(){
+	it("accepts only valid cardinals", function(){
+		var incorrectCardinal = function(){
 			var position = new Position(0, 1, "F")
 		}
-		expect(incorrectDirection).toThrow()
+		expect(incorrectCardinal).toThrow()
 	})
 });
