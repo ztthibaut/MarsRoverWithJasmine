@@ -12,7 +12,13 @@ var South = {
 		rotate: function(){}
 	},
 	East = {name: "East",
-		rotate: function(){}
+		rotate: function(direction){
+			if(direction === "L"){
+				return Cardinals.N
+			} else {
+				return Cardinals.S
+			}
+		}
 	},
 	North = {
 		name: "North",
@@ -23,7 +29,7 @@ var South = {
 				return Cardinals.E
 			}
 		}
-	} ;
+	}
 var Cardinals = {
 	N: North, E: East, W: West, S: South,
 	isValid: function(cardinal){
