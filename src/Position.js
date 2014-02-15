@@ -26,4 +26,11 @@ function Position(xCoordinate, yCoordinate, cardinal){
 	this.getCardinal = function(){
 		return myCardinal
 	}
+	this.move = function(direction){
+		if(this.getCardinal() === Cardinals.N){
+			myYCoordinate = this.getYCoordinate() + 1
+		} else {
+			myYCoordinate = this.getYCoordinate() - 1
+		}
+	}
 }
