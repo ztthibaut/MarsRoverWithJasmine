@@ -31,8 +31,10 @@ function Position(xCoordinate, yCoordinate, cardinal){
 			myYCoordinate = this.getYCoordinate() + 1
 		} else if(this.getCardinal() === Cardinals.S){
 			myYCoordinate = this.getYCoordinate() - 1
-		} else {
+		} else if(this.getCardinal() === Cardinals.E) {
 			myXCoordinate = this.getXCoordinate() + 1
+		} else {
+			myXCoordinate = this.getXCoordinate() - 1
 		}
 	}
 }
