@@ -1,7 +1,34 @@
+var South = {
+		name: "South",
+		rotate: function(direction){
+			if(direction === "L"){
+				return Cardinals.E
+			} else {
+				return Cardinals.W
+			}
+		}
+	},
+	West = {name: "West",
+		rotate: function(){}
+	},
+	East = {name: "East",
+		rotate: function(){}
+	},
+	North = {
+		name: "North",
+		rotate: function(direction){
+			if(direction === "L"){
+				return Cardinals.W
+			} else {
+				return Cardinals.E
+			}
+		}
+	} ;
 var Cardinals = {
-	N:"North", S:"South", E:"East", W:"West",
+	N: North, E: East, W: West, S: South,
 	isValid: function(cardinal){
-		return 	cardinal === "North" || cardinal === "South" || cardinal === "East" || cardinal === "West"
+		return 	cardinal.name === "North" || cardinal.name === "South" || 
+				cardinal.name === "East" || cardinal.name === "West"
 	}
 }
 Object.freeze(Cardinals)
@@ -29,14 +56,8 @@ function Position(xCoordinate, yCoordinate, cardinal){
 	this.move = function(direction){
 		if(direction === "M"){
 			this.aMove()
-		} else if(direction === "L" && myCardinal === Cardinals.N){
-			myCardinal = Cardinals.W
-		} else if(direction === "R" && myCardinal === Cardinals.N){
-			myCardinal = Cardinals.E
-		} else if(direction === "L" && myCardinal === Cardinals.S){
-			myCardinal = Cardinals.E
 		} else {
-			myCardinal = Cardinals.W
+			myCardinal = myCardinal.rotate(direction)
 		}
 	}
 	this.aMove = function(){

@@ -7,7 +7,7 @@ describe("Mars rover", function(){
 					var actualPosition = actual.getPosition()
 					result.pass = util.equals(actualPosition.getXCoordinate(), expected.getXCoordinate()) 
 						&& util.equals(actualPosition.getYCoordinate(), expected.getYCoordinate())
-						&& util.equals(actualPosition.getCardinal(), expected.getCardinal())
+						&& util.equals(actualPosition.getCardinal().name, expected.getCardinal().name)
 
 					if(result.pass){
 						result.message = "The Mars Rover has the correct position"
@@ -15,7 +15,7 @@ describe("Mars rover", function(){
 						result.message = "Expected the Mars Rover to be at " 
 							+ expected.getXCoordinate() + " on x-axis, "
 							+ expected.getYCoordinate() + " on y-axis "
-							+ "and facing " + expected.getCardinal()
+							+ "and facing " + expected.getCardinal().name
 					}
 					return result
 				}
