@@ -74,4 +74,16 @@ describe("Mars rover", function(){
 		marsRover.move("M")
 		expect(marsRover).toHavePosition(new Position(1, 0, Cardinals.W))
 	})
+	it("can turn left correctly when facing North", function(){
+		var initialPosition = new Position(0, 0, Cardinals.N)
+		var marsRover = new MarsRover(initialPosition)
+		marsRover.move("L")
+		expect(marsRover).toHavePosition(new Position(0, 0, Cardinals.W))
+	})
+	it("can turn right correctly when facing North", function(){
+		var initialPosition = new Position(0, 0, Cardinals.N)
+		var marsRover = new MarsRover(initialPosition)
+		marsRover.move("R")
+		expect(marsRover).toHavePosition(new Position(0, 0, Cardinals.E))
+	})
 })
