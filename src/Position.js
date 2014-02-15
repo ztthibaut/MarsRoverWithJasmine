@@ -29,10 +29,14 @@ function Position(xCoordinate, yCoordinate, cardinal){
 	this.move = function(direction){
 		if(direction === "M"){
 			this.aMove()
-		} else if(direction === "L"){
+		} else if(direction === "L" && myCardinal === Cardinals.N){
 			myCardinal = Cardinals.W
-		} else {
+		} else if(direction === "R" && myCardinal === Cardinals.N){
 			myCardinal = Cardinals.E
+		} else if(direction === "L" && myCardinal === Cardinals.S){
+			myCardinal = Cardinals.E
+		} else {
+			myCardinal = Cardinals.W
 		}
 	}
 	this.aMove = function(){
