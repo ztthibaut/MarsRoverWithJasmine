@@ -32,6 +32,12 @@ describe("Mars rover", function(){
 		marsRover.move("M")
 		expect(marsRover).toHavePosition(new Position(0, 1, Cardinals.N))
 	})
+	it("can move forward when facing North from a different y-axis position", function(){
+		var initialPosition = new Position(0, 2, Cardinals.N)
+		var marsRover = new MarsRover(initialPosition)
+		marsRover.move("M")
+		expect(marsRover).toHavePosition(new Position(0, 3, Cardinals.N))
+	})
 	it("can move forward when facing South", function(){
 		var initialPosition = new Position(0, 1, Cardinals.S)
 		var marsRover = new MarsRover(initialPosition)
