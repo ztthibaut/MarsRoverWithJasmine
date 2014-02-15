@@ -9,7 +9,13 @@ var South = {
 		}
 	},
 	West = {name: "West",
-		rotate: function(){}
+		rotate: function(direction){
+			if(direction === "L"){
+				return Cardinals.S
+			} else {
+				return Cardinals.N
+			}
+		}
 	},
 	East = {name: "East",
 		rotate: function(direction){

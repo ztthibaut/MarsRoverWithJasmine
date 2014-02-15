@@ -29,4 +29,14 @@ describe("Cardinal", function(){
 		var cardinalAfter = myCardinal.rotate("R")
 		expect(cardinalAfter).toEqual(Cardinals.S)
 	})
+	it("is updated correctly after turning left when facing West", function(){
+		var myCardinal = Cardinals.W
+		var cardinalAfter = myCardinal.rotate("L")
+		expect(cardinalAfter).toEqual(Cardinals.S)
+	})
+	it("is updated correctly after turning right when facing West", function(){
+		var myCardinal = Cardinals.W
+		var cardinalAfter = myCardinal.rotate("R")
+		expect(cardinalAfter).toEqual(Cardinals.N)
+	})
 })
