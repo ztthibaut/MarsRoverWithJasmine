@@ -49,7 +49,7 @@ function Position(xCoordinate, yCoordinate, cardinal, plateau){
 			}
 		} else if(this.getCardinal() === Cardinals.E) {
 			var nextXCoordinate = this.getXCoordinate() + 1
-			if(nextXCoordinate <+ plateau.getXDimension()){
+			if(nextXCoordinate <= plateau.getXDimension()){
 				myXCoordinate = nextXCoordinate
 			}
 		} else {

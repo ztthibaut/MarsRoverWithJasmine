@@ -1,5 +1,5 @@
 var South = {
-		name: "South",
+		name: "S",
 		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.E
@@ -8,7 +8,7 @@ var South = {
 			}
 		}
 	},
-	West = {name: "West",
+	West = {name: "W",
 		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.S
@@ -17,7 +17,7 @@ var South = {
 			}
 		}
 	},
-	East = {name: "East",
+	East = {name: "E",
 		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.N
@@ -27,7 +27,7 @@ var South = {
 		}
 	},
 	North = {
-		name: "North",
+		name: "N",
 		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.W
@@ -39,8 +39,8 @@ var South = {
 var Cardinals = {
 	N: North, E: East, W: West, S: South,
 	isValid: function(cardinal){
-		return 	cardinal.name === "North" || cardinal.name === "South" || 
-				cardinal.name === "East" || cardinal.name === "West"
+		return 	cardinal.name === "N" || cardinal.name === "S" || 
+				cardinal.name === "E" || cardinal.name === "W"
 	}
 }
 Object.freeze(Cardinals)
