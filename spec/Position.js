@@ -36,7 +36,12 @@ describe("Position", function(){
 		var incorrectCardinal = function(){
 			var position = new Position(0, 1, "F")
 		}
-		expect(incorrectCardinal).toThrow()
+		expect(incorrectCardinal).toThrow(
+				{
+					name: "Incorrect Cardinal",
+					message: "An incorrect cardinal direction was provided"
+				}
+			)
 	})
 	it("can move forward when facing North", function(){
 		var position = new Position(0, 0, Cardinals.N)

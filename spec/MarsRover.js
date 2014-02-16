@@ -41,6 +41,11 @@ describe("Mars rover", function(){
 		var incorrectMove = function(){
 			marsRover.move("W")
 		}
-		expect(incorrectMove).toThrow()
+		expect(incorrectMove).toThrow(
+				{
+					name: "Incorrect movement",
+					message: "An incorrect movement, W was provided"
+				}
+			)
 	})
 })
