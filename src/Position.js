@@ -26,8 +26,13 @@ function Position(xCoordinate, yCoordinate, cardinal){
 	this.aMove = function(direction){
 		if(direction === "M"){
 			this.aMoveForward()
-		} else {
+		} else if(direction === "L" || direction === "R"){
 			myCardinal = myCardinal.spin(direction)
+		} else {
+			throw{
+				name: "Incorrect movement",
+				message: "An incorrect movement, " + direction + " was provided"
+			}
 		}
 	}
 	this.aMoveForward = function(){

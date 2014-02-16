@@ -35,4 +35,12 @@ describe("Mars rover", function(){
 		marsRover.move("MRM")
 		expect(marsRover).toHavePosition(new Position(1, 1, Cardinals.E))
 	})
+	it("throws error if incorrect movement instruction is provided", function(){
+		var initialPosition = new Position(0, 0, Cardinals.W)
+		var marsRover = new MarsRover(initialPosition)
+		var incorrectMove = function(){
+			marsRover.move("W")
+		}
+		expect(incorrectMove).toThrow()
+	})
 })

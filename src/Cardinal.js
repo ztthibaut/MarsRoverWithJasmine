@@ -12,13 +12,8 @@ var South = {
 		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.S
-			} else if(direction === "R"){
-				return Cardinals.N
 			} else {
-				throw{
-					name: "Incorrect movement",
-					message: "An incorrect movement, " + direction + " was provided"
-				}
+				return Cardinals.N
 			}
 		}
 	},
@@ -26,13 +21,8 @@ var South = {
 		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.N
-			} else if (direction === "R"){
-				return Cardinals.S
 			} else {
-				throw{
-					name: "Incorrect movement",
-					message: "An incorrect movement, " + direction + " was provided"
-				}
+				return Cardinals.S
 			}
 		}
 	},
