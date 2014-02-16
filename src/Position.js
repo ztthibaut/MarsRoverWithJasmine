@@ -43,11 +43,20 @@ function Position(xCoordinate, yCoordinate, cardinal, plateau){
 			}
 			
 		} else if(this.getCardinal() === Cardinals.S){
-			myYCoordinate = this.getYCoordinate() - 1
+			var nextYCoordinate = this.getYCoordinate() - 1
+			if(nextYCoordinate >= 0){
+				myYCoordinate = nextYCoordinate
+			}
 		} else if(this.getCardinal() === Cardinals.E) {
-			myXCoordinate = this.getXCoordinate() + 1
+			var nextXCoordinate = this.getXCoordinate() + 1
+			if(nextXCoordinate <+ plateau.getXDimension()){
+				myXCoordinate = nextXCoordinate
+			}
 		} else {
-			myXCoordinate = this.getXCoordinate() - 1
+			var nextXCoordinate = this.getXCoordinate() - 1
+			if(nextXCoordinate >= 0){
+				myXCoordinate = nextXCoordinate
+			}
 		}
 	}
 	this.getWarning = function(){

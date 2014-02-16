@@ -96,4 +96,31 @@ describe("Position", function(){
 			description: "one of the provided moves is invalid. The rover stayed in the last valid position"
 		})
 	})
+	it("sets a warning when a move takes you out of the plateau when facing South", function(){
+		var position = new Position(0, 0, Cardinals.S, plateau)
+		position.move("M")
+		expect(position).toEqualPosition(new Position(0, 0, Cardinals.S, plateau))
+		expect(position.getWarning()).toEqual({
+			name: "invalid move",
+			description: "one of the provided moves is invalid. The rover stayed in the last valid position"
+		})
+	})
+	it("sets a warning when a move takes you out of the plateau when facing West", function(){
+		var position = new Position(0, 0, Cardinals.W, plateau)
+		position.move("M")
+		expect(position).toEqualPosition(new Position(0, 0, Cardinals.W, plateau))
+		expect(position.getWarning()).toEqual({
+			name: "invalid move",
+			description: "one of the provided moves is invalid. The rover stayed in the last valid position"
+		})
+	})
+	it("sets a warning when a move takes you out of the plateau when facing East", function(){
+		var position = new Position(5, 0, Cardinals.E, plateau)
+		position.move("M")
+		expect(position).toEqualPosition(new Position(5, 0, Cardinals.E, plateau))
+		expect(position.getWarning()).toEqual({
+			name: "invalid move",
+			description: "one of the provided moves is invalid. The rover stayed in the last valid position"
+		})
+	})
 })
