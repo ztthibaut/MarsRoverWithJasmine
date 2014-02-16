@@ -16,6 +16,10 @@ describe("Mars rover", function(){
 							+ expected.getXCoordinate() + " on x-axis, "
 							+ expected.getYCoordinate() + " on y-axis "
 							+ "and facing " + expected.getCardinal().name
+							+ ". Instead it is at "
+							+ actualPosition.getXCoordinate() + " on x-axis, "
+							+ actualPosition.getYCoordinate() + " on y-axis "
+							+ "and facing " + actualPosition.getCardinal().name
 					}
 					return result
 				}
@@ -25,4 +29,10 @@ describe("Mars rover", function(){
 	beforeEach(function() {
 	    jasmine.addMatchers(customMatchers);
 	  })
+	it("can take multiple steps at once", function(){
+		var initialPosition = new Position(0, 0, Cardinals.N)
+		var marsRover = new MarsRover(initialPosition)
+		marsRover.move("MRM")
+		expect(marsRover).toHavePosition(new Position(1, 1, Cardinals.E))
+	})
 })
