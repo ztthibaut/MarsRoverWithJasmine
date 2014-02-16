@@ -12,8 +12,13 @@ var South = {
 		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.S
-			} else {
+			} else if(direction === "R"){
 				return Cardinals.N
+			} else {
+				throw{
+					name: "Incorrect movement",
+					message: "An incorrect movement, " + direction + " was provided"
+				}
 			}
 		}
 	},

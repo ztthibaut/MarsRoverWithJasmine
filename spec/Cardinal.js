@@ -39,4 +39,11 @@ describe("Cardinal", function(){
 		var cardinalAfter = myCardinal.spin("R")
 		expect(cardinalAfter).toEqual(Cardinals.N)
 	})
+	it("throws error if incorrect spin input is provided when facing West", function(){
+		var myCardinal = Cardinals.W
+		var incorrectSpin = function(){
+			myCardinal.spin("W")
+		}
+		expect(incorrectSpin).toThrow()
+	})
 })
