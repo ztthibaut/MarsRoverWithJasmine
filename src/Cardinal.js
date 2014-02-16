@@ -1,6 +1,6 @@
 var South = {
 		name: "South",
-		rotate: function(direction){
+		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.E
 			} else {
@@ -9,7 +9,7 @@ var South = {
 		}
 	},
 	West = {name: "West",
-		rotate: function(direction){
+		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.S
 			} else {
@@ -18,7 +18,7 @@ var South = {
 		}
 	},
 	East = {name: "East",
-		rotate: function(direction){
+		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.N
 			} else {
@@ -28,7 +28,7 @@ var South = {
 	},
 	North = {
 		name: "North",
-		rotate: function(direction){
+		spin: function(direction){
 			if(direction === "L"){
 				return Cardinals.W
 			} else {

@@ -19,13 +19,18 @@ function Position(xCoordinate, yCoordinate, cardinal){
 		return myCardinal
 	}
 	this.move = function(direction){
-		if(direction === "M"){
-			this.aMove()
-		} else {
-			myCardinal = myCardinal.rotate(direction)
+		for(var j = 0; j < direction.length; j++){
+			this.aMove(direction.substr(j, 1))
 		}
 	}
-	this.aMove = function(){
+	this.aMove = function(direction){
+		if(direction === "M"){
+			this.aMoveForward()
+		} else {
+			myCardinal = myCardinal.spin(direction)
+		}
+	}
+	this.aMoveForward = function(){
 		if(this.getCardinal() === Cardinals.N){
 			myYCoordinate = this.getYCoordinate() + 1
 		} else if(this.getCardinal() === Cardinals.S){
