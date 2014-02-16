@@ -1,4 +1,4 @@
-function Position(xCoordinate, yCoordinate, cardinal){
+function Position(xCoordinate, yCoordinate, cardinal, plateau){
 	var myXCoordinate = xCoordinate
 	var myYCoordinate = yCoordinate
 	if(!Cardinals.isValid(cardinal)){

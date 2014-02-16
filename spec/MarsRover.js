@@ -26,17 +26,18 @@ describe("Mars rover", function(){
 			}
 		}
 	}
+	var plateau = new Plateau(5,5)
 	beforeEach(function() {
-	    jasmine.addMatchers(customMatchers);
+	    jasmine.addMatchers(customMatchers)
 	  })
 	it("can take multiple steps at once", function(){
-		var initialPosition = new Position(0, 0, Cardinals.N)
+		var initialPosition = new Position(0, 0, Cardinals.N, plateau)
 		var marsRover = new MarsRover(initialPosition)
 		marsRover.move("MRM")
-		expect(marsRover).toHavePosition(new Position(1, 1, Cardinals.E))
+		expect(marsRover).toHavePosition(new Position(1, 1, Cardinals.E, plateau))
 	})
 	it("throws error if incorrect movement instruction is provided", function(){
-		var initialPosition = new Position(0, 0, Cardinals.W)
+		var initialPosition = new Position(0, 0, Cardinals.W, plateau)
 		var marsRover = new MarsRover(initialPosition)
 		var incorrectMove = function(){
 			marsRover.move("W")
